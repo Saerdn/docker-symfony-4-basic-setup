@@ -4,15 +4,15 @@ Basic Symfony 4 setup with Docker, containing two entities (parent + child), bas
 
 ##  Content
 
-1. Sources
-2. Features
+1. Features
+2. Sources
 3. How to start
     1. Start docker
     2. Start/Install project
 4. Run tests
 
 
-# 1. Features
+## 1. Features
 - Login
 - Authorization (Admin vs custom user)
     - Admins can create new users
@@ -23,7 +23,7 @@ Basic Symfony 4 setup with Docker, containing two entities (parent + child), bas
 - Parent entity
 - Child entity
 
-# 2. Sources used
+## 2. Sources used
 - jQuery 3.1.1
 - Bootstrap 3.7.7
 - Symfony 4
