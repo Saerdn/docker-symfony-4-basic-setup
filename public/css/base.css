@@ -1,0 +1,100 @@
+ul {
+    list-style: disc;
+}
+
+#parent_form_is_public {
+    margin-left: 5px;
+    -ms-transform: scale(1.1); /* IE */
+    -moz-transform: scale(1.1); /* FF */
+    -webkit-transform: scale(1.1); /* Safari and Chrome */
+    -o-transform: scale(1.1); /* Opera */
+    transform: scale(1.1);
+}
+
+#logo-top-right {
+    height: 40px;
+    margin: 10px 0;
+}
+
+#backend-logo {
+    color: #fff;
+    font-size: 25px;
+}
+
+#menu {
+    display: inline-flex;
+    list-style: none;
+}
+
+#menu li {
+    margin-right: 10px;
+}
+
+.admin-name {
+    color: #fff !important;
+}
+
+.parent-helper-text {
+    margin-bottom: 10px;
+    color: darkgrey;
+}
+
+.vertical-align-top {
+    vertical-align: top;
+}
+
+.help-block {
+    color: red !important;
+}
+
+.parent-icon {
+    font-size: 15px;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.parent-icon-success {
+    color: green;
+}
+
+.parent-icon-danger {
+    color: red;
+}
+
+.parent-details-is-locked-link {
+    cursor: pointer;
+}
+
+.no-entries-found {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.div-table-content {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.table-content {
+    width: 100%;
+}
+
+.sidebar-header {
+    display: inline-flex;
+    width: 100%;
+}
+
+.user-name-container {
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: right;
+    width: 100%;
+    color: #fff;
+}
+
+.user-name-container a, .user-name-container a:hover {
+    color: #fff;
+}

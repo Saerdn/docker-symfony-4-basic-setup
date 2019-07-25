@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <div>
+        <div>
+            <div class="text-center custom-login">
+                <h3>Please login</h3>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <form method="post">
+                            {% if error %}
+                            <div class="alert alert-danger text-center" role="alert">
+                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                            </div>
+                            {% endif %}
+                            <div class="form-group">
+                                <label class="control-label" for="username">User</label>
+                                <input type="email" value="{{ last_username }}" name="email" id="email"
+                                       class="form-control" placeholder="Email" required autofocus
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control"
+                                       placeholder="Password" required
+                                >
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" class="i-checks" style="margin-left: auto" id="remember-me">
+                                <label for="remember-me">Remember me</label>
+                            </div>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            <input type="hidden" name="_target_path" value="/backend" />
+
+                            <button type="submit" class="btn btn-default btn-block loginbtn">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

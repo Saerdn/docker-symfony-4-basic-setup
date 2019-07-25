@@ -1,0 +1,54 @@
+{% extends 'backend/base.backend.html.twig' %}
+
+{% block title %}See all children{% endblock %}
+
+{% block body %}
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div>
+                        <h2>Overview children</h2>
+                        <a href="{{ path('child_create') }}">Create new child</a>
+                        <div class="div-table-content">
+                            {% if children|length > 0 %}
+                            <table border="1" class="table-content">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Nr of parents</th>
+                                    <th>Created at</th>
+                                    <th></th>
+                                </tr>
+                                {% for child in children %}
+                                    <tr>
+                                        <td>{{ child.id }}</td>
+                                        <td>{{ child.name }}</td>
+                                        <td>{{ child.parents|length }}</td>
+                                        <td>{{ child.createdAt|date('d.m.Y, H:i') }} Uhr</td>
+                                        <td>
+                                            <a href="{{ path('child_edit', {id: child.id}) }}">
+                                                <button data-toggle="tooltip" title="Edit child" class="btn btn-primary btn-sm">
+                                                    Edit
+                                                </button>
+                                            </a>
+                                            <a href="{{ path('child_delete', {id: child.id}) }}">
+                                                <button data-toggle="tooltip" title="Delete child" class="btn btn-danger btn-sm">
+                                                    Delete
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                            {% endif %}
+                            {% if children|length == 0 %}
+                                <div class="no-entries-found">No children found</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

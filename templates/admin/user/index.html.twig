@@ -1,0 +1,71 @@
+{% extends 'backend/base.backend.html.twig' %}
+
+{% block title %}See all users{% endblock %}
+
+{% block body %}
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div>
+                    <div>
+                        <h4>See all users</h4>
+                        <div>
+                            <a href="{{ path('admin_user_create') }}">Create new user</a>
+                        </div>
+                        <div class="div-table-content">
+                            <table border="1" class="table-content">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Mail</th>
+                                        <th>Firstname</th>
+                                        <th>Surname</th>
+                                        <th>Roles</th>
+                                        <th>Is active</th>
+                                        <th>Created at</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                {% for user in users %}
+                                    <tr>
+                                        <td>{{ user.id }}</td>
+                                        <td>{{ user.email}}</td>
+                                        <td>{{ user.firstname }}</td>
+                                        <td>{{ user.surname }}</td>
+                                        <td>
+                                            <ul>
+                                                {% for role in user.getRoles %}
+                                                    <li>{{ role }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            {% if user.isActive %}
+                                                <span class="glyphicon glyphicon-ok exam-icon exam-icon-success"></span>
+                                            {% else %}
+                                                <span class="glyphicon glyphicon-remove exam-icon exam-icon-danger"></span>
+                                            {% endif %}
+                                        </td>
+                                        <td>{{ user.createdAt|date('d.m.Y, H:i') }}</td>
+                                        <td>
+                                            <a href="{{ path('admin_user_edit', {id: user.id}) }}">
+                                                <button data-toggle="tooltip" title="Edit user" class="btn btn-primary">
+                                                    Edit
+                                                </button>
+                                            </a>
+                                            <a href="{{ path('admin_user_delete', {id: user.id}) }}">
+                                                <button data-toggle="tooltip" title="Delete user" class="btn btn-danger">
+                                                    Delete
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

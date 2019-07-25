@@ -1,0 +1,54 @@
+#homepage-image-container {
+    height: 100%;
+    background-color: white;
+    text-align: center;
+    padding-top: 15px;
+}
+
+#homepage-image {
+    width: 80%;
+}
+
+.code-search-container {
+    display: flex;
+}
+
+.code-search-input {
+    flex: 1;
+    margin-right: -3px;
+}
+
+.logged-in-as {
+    margin: 10px;
+    margin-right: 20px;
+}
+
+.homepage-link-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.homepage-link {
+    padding: 0 10px;
+    color: black;
+}
+
+.homepage-link:hover {
+    text-decoration: underline;
+}
+
+.show-exam-helper-text {
+    margin-top: 10px;
+    color: darkgrey;
+    font-size: 13px;
+}
+
+.status-field {
+    text-align: center;
+    font-weight: bold;
+}
+
+.text-right {
+    text-align: right;
+}
